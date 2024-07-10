@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kasir</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.0/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center mb-4">
+        <strong><i>KASIR</i></strong>
+      </h1>
+      <form id="kasir">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="nama_pelanggan">Nama Pelanggan</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nama_pelanggan"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="tanggal">Tanggal</label>
+            <input type="date" class="form-control" id="tanggal" required />
+          </div>
+          <div class="form-group col-md-3">
+            <label for="jam">Jam</label>
+            <input type="time" class="form-control" id="jam" required />
+          </div>
+        </div>
+        <table class="table table-bordered" id="tabel_struk">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Qty</th>
+              <th>Harga Satuan</th>
+              <th>Sub Total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="itemsBody">
+            <tr>
+              <td><input type="text" class="form-control item" required /></td>
+              <td><input type="number" class="form-control qty" required /></td>
+              <td>
+                <input
+                  type="number"
+                  class="form-control harga_bijian"
+                  required
+                />
+              </td>
+              <td>
+                <input type="number" class="form-control sub_total" readonly />
+              </td>
+              <td>
+                <button type="button" class="btn btn-danger delete">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="button" class="btn btn-primary" id="tambah_barang">
+          + Tambah Barang
+        </button>
+        <div class="form-row">
+          <div class="form-group col-md-4 ml-auto">
+            <label for="total">Total</label>
+            <input type="number" class="form-control" id="total" readonly />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4 ml-auto">
+            <label for="bayar_tunai">Bayar Tunai</label>
+            <input
+              type="number"
+              class="form-control"
+              id="bayar_tunai"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4 ml-auto">
+            <label for="kembalian">Kembali</label>
+            <input type="number" class="form-control" id="kembalian" readonly />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4 ml-auto">
+            <button type="submit" class="btn btn-success">Simpan</button>
+            <button type="reset" class="btn btn-secondary">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
